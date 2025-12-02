@@ -1,0 +1,15 @@
+all:
+  exclude:
+    - 'spec/**/*'
+# exclude files for single runner
+eslint:
+  exclude:
+    - 'app/assets/**/*'
+bitbucket:
+  slug: jurnal/msign-backend
+  web_endpoint: https://bitbucket.org/
+max_warnings: 150
+warnings_per_review: 30
+verbose: true
+runners: [rubocop, eslint] # only listed runners will be executed
+skip_runners: [reek]

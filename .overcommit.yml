@@ -1,0 +1,10 @@
+PreCommit:
+  RailsBestPractices:
+    enabled: false
+    command: ['bundle', 'exec', 'rails_best_practices', '-c', 'config/rails_best_practices.yml']
+  RuboCop:
+    enabled: true
+    command: ['bundle', 'exec', 'rubocop', '-c', '.rubocop.yml']
+  BrakeMan:
+    enabled: true
+    command: ['brakeman', '-x', 'ForceSSL'] # ForceSSL done by LoadBalancer

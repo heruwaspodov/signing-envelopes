@@ -1,0 +1,97 @@
+AllCops:
+  TargetRubyVersion: 3.0
+  NewCops: enable
+  SuggestExtensions: false
+
+  Include:
+    - "config.ru"
+    - "Gemfile"
+    - "Guardfile"
+    - "Rakefile"
+    - "app/**/*.rb"
+    - "config/**/*.rb"
+    - "lib/**/*.rb"
+    - "spec/**/*.rb"
+    - "db/seeds.rb"
+    - "db/seeds/*.rb"
+
+  Exclude:
+    - "app/controllers/api/concerns/exception_handler.rb"
+    - "bin/*"
+    - "db/schema.rb"
+    - "db/migrate/*"
+    - "log/**/*"
+    - "node_modules/**/*"
+    - "public/**/*"
+    - "script/**/*"
+    - "vendor/**/*"
+    - "tmp/**/*"
+    - ".git/**/*"
+    - "app/views/**/*"
+    - "config/initializers/monkey_patches.rb"
+    - "config/initializers/lograge.rb"
+
+Layout/IndentationConsistency:
+  EnforcedStyle: "indented_internal_methods"
+
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - "config/environments/*"
+    - "config/initializers/*"
+
+Metrics/BlockLength:
+  Exclude:
+    - "app/admin/**/*"
+    - "spec/**/*"
+    - "Guardfile"
+    - "config/environments/*"
+    - "config/routes/api.rb"
+
+Metrics/ClassLength:
+  Description: 'Avoid class longer than 140 lines of code.'
+  Exclude:
+    - "db/seeds.rb"
+  CountAsOne: ['array', 'heredoc', 'hash']
+  Max: 150
+
+Metrics/ModuleLength:
+  Description: 'Avoid module longer than 100 lines of code.'
+  CountAsOne: ['array', 'heredoc', 'hash']
+  Max: 100
+
+Naming/FileName:
+  Exclude:
+    - "Gemfile"
+    - "Guardfile"
+    - "Rakefile"
+
+Naming/MemoizedInstanceVariableName:
+  Exclude:
+    - "app/controllers/**/*"
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: true
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: single_quotes
+
+Lint/MissingSuper:
+  Exclude:
+    - "app/services/**/*"
+    - "lib/**/*"
+
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 20 lines of code.'
+  StyleGuide: '<https://github.com/bbatsov/ruby-style-guide#short-methods>'
+  Max: 20
+  Enabled: true
+  CountAsOne: ['array', 'heredoc', 'hash']
+
+Metrics/ParameterLists:
+  Description: 'Pass no more than four parameters into a method.'
+  Max: 4

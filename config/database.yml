@@ -1,0 +1,88 @@
+# PostgreSQL. Versions 9.3 and up are supported.
+#
+# Install the pg driver:
+#   gem install pg
+# On macOS with Homebrew:
+#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+# On macOS with MacPorts:
+#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQL and put its /bin directory on your path.
+#
+# Configure Using Gemfile
+# gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: &default_host <%= ENV["MEKARI_SIGN_DATABASE_HOST"] || "localhost" %>
+  port: <%= ENV["MEKARI_SIGN_DATABASE_PORT"] || 5432 %>
+  username: &default_username <%= ENV["MEKARI_SIGN_DATABASE_USERNAME"] || "postgres" %>
+  password: &default_password <%= ENV["MEKARI_SIGN_DATABASE_PASSWORD"] || "postgres_password" %>
+  connect_timeout: <%= ENV["MEKARI_SIGN_DATABASE_CONNECT_TIMEOUT"] || "2" %>
+  checkout_timeout: <%= ENV["MEKARI_SIGN_DATABASE_CHECKOUT_TIMEOUT"] || "5" %>
+  variables:
+    statement_timeout: &default_statement_timeout <%= ENV["MEKARI_SIGN_DATABASE_STATEMENT_TIMEOUT"] || "5s" %>
+  gssencmode: disable
+
+replica: &replica
+  <<: *default
+  host: <%= ENV["MEKARI_SIGN_REPLICA_DATABASE_HOST"] || "*default_host" %>
+  username: <%= ENV["MEKARI_SIGN_REPLICA_DATABASE_USERNAME"] || "*default_username" %>
+  password: <%= ENV["MEKARI_SIGN_REPLICA_DATABASE_PASSWORD"] || "*default_password" %>
+  replica: true
+
+development:
+  primary:
+    <<: *default
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] || "postgres" %>_development
+  primary_replica:
+    <<: *replica
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] || "postgres" %>_development
+
+test:
+  primary:
+    <<: *default
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] %><%= ENV['TEST_ENV_NUMBER'] %>_test
+  primary_replica:
+    <<: *replica
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] %><%= ENV['TEST_ENV_NUMBER'] %>_test
+
+staging:
+  primary:
+    <<: *default
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] %>
+  primary_replica:
+    <<: *replica
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] %>
+
+playground:
+  primary:
+    <<: *default
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] %>
+  primary_replica:
+    <<: *replica
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] %>
+
+sandbox:
+  primary:
+    <<: *default
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] %>
+  primary_replica:
+    <<: *replica
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] %>
+
+production:
+  primary:
+    <<: *default
+    pool: <%= ENV.fetch("RAILS_DB_POOL") { 5 } %>
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] %>
+  primary_replica:
+    <<: *replica
+    pool: <%= ENV.fetch("RAILS_DB_POOL") { 5 } %>
+    database: <%= ENV['MEKARI_SIGN_DATABASE_NAME'] %>

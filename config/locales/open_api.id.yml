@@ -1,0 +1,10 @@
+id:
+  open_api:
+    errors:
+      messages:
+        insuffient_balance: "Saldo eMeterai tidak cukup"
+        insuffient_kyc_balance: "Saldo eKYC tidak cukup"
+        kyc_usage_already_exist: "Email sudah pernah diundang sebelumnya"
+        expires_at_invalid: "expires_in tidak valid"
+    forbidden:
+      not_allowed_endpoint: "Forbidden. Tidak diizinkan mengakses endpoint ini. Silakan hubungi tim kami untuk mengaktifkan."

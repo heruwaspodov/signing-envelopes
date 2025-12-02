@@ -1,0 +1,14 @@
+shared:
+  foo: bar # will be available in all enviroment
+
+development:
+  sidekiq_host: http://localhost:3000
+
+staging:
+  sidekiq_host: https://staging-sidekiq-esign.mekari.io
+
+sandbox:
+  sidekiq_host: https://sandbox-sidekiq-esign.mekari.io
+
+production:
+  sidekiq_host: https://sidekiq.esign.mekari.com

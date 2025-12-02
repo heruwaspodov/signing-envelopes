@@ -1,0 +1,25 @@
+Tilaka PSrE e-KYC User Consent
+PT Mekari Identity Digital (Mekari e-Sign) cooperates with PT Tilaka Nusa Teknologi (Tilaka) in the process of electronic certificate issuance services and electronic signature creation (“Mekari e-Sign Service”). Tilaka is a limited liability company that already has an Electronic Certification Operator (“PSrE”) license as per Recognition Decree No. 423 of 2021 with Parent Recognition Status issued by the Ministry of Communication and Information.
+By continuing to use the Mekari e-Sign services, you agree and authorize us to store, share forward your information and/or data related to the use of the Mekari e-Sign service to Tilaka for the purpose of providing the Mekari e-Sign service. The data and/or information required are as follows (herein known as “Personal Data”):
+        1        Name according to ID card
+        2        E-mail
+        3        Phone number
+        4        ID card photo
+        5        Selfie
+        6        Electronic document to be affixed with PSrE Electronic Certificate.
+Purpose of providing Data:
+        1        Issue, revoke, and/or re-issue Owner's Certificates
+        2        Use your Personal Data to provide and improve the Tilaka Electronic Signature Service
+        3        Collect, record, and analyze data related to the activity of using the Tilaka Electronic Signature Service
+        4        Send information about the products and/or services created, developed and/or owned by Tilaka PSR that may be needed
+        5        Send information by email regarding the failure to protect your Personal Data
+        6        Send you instructions regarding the compromise or misuse of the Owner's Certificate
+        7        Publish the Certificate Revocation List (CRL)
+        8        Send information on changes to Public Documents and
+        9        Use or disclose your Personal Data in order to assist law enforcement based on orders from the court and/or from Law Enforcement Officials in accordance with the provisions of the applicable laws and regulations.
+
+
+By checking the Agree button, it means that you have read, understood and agreed to this User Consent, as well as the following Service Policy Documents:
+
+
+I hereby agree to the Service Policy Document, which includes but is not limited to the Terms and Conditions of Use of Tilaka PSrE Digital Certificate, Tilaka Privacy Policy, Tilaka Relying Party Agreement, Tilaka Certificate Owner Agreement, Tilaka CA Certificate, Tilaka CRL, Tilaka Assurance Policy, CP/CPS Tilaka. https://mekarisign.com/id/syarat-dan-ketentuan/

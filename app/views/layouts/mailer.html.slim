@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    = render 'layouts/header'
+  body
+    img[src=@company_logo_url width="auto" height="50"]
+      br
+      .round
+        = yield
+
+      = render 'layouts/footer'

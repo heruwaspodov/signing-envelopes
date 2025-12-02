@@ -1,0 +1,10 @@
+en:
+  open_api:
+    errors:
+      messages:
+        insuffient_balance: "eMeterai balance is insufficient"
+        insuffient_kyc_balance: "eKYC balance is insufficient"
+        kyc_usage_already_exist: "Email has already been invited"
+        expires_at_invalid: "expires_in is invalid"
+    forbidden:
+      not_allowed_endpoint: "Forbidden. Not allowed to access this endpoint. Please contact our team to enable."

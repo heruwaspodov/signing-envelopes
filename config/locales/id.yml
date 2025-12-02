@@ -1,0 +1,638 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+id:
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " dan "
+      last_word_connector: ", dan "
+  hello: "Hello world"
+  document_status:
+    signed: "Signed"
+    viewed: "Viewed"
+    sealed: "Sealed"
+    sent: "Sent"
+  audit_trails:
+    report:
+      sent: "Mengirimkan dokumen kepada %{recipient_name} dari %{actor_name} (%{actor_email})."
+      resent: "Mengirimkan ulang dokumen kepada %{recipient_name} dari %{actor_name} (%{actor_email})."
+      general_action: "%{action} oleh %{actor_name} (%{actor_email})."
+      completed: "Dokumen telah selesai."
+      requested: "Tanda tangan sedang dalam proses."
+      approved: "Tanda tangan oleh %{actor_name} telah selesai."
+      shared: "Dokumen dibagikan kepada %{shared_type} %{shared_message} oleh %{actor_name}."
+      remove_shared: "Dokumen sharing dihapus dari %{shared_type} %{shared_message} oleh %{actor_name}."
+      signing_delegated: "Tanda tangan diteruskan oleh %{actor_name} kepada %{recipient_name}."
+      approval_approved: "Disetujui oleh %{actor_name}."
+      approval_rejected: "Ditolak oleh %{actor_name}."
+      approval_created: "Dibuat oleh %{actor_name}."
+      approval_updated: "Diubah oleh %{actor_name}."
+      approval_need_revision: "Diminta revisi oleh %{actor_name}."
+      validity: "Kontrak akan efektif pada %{date_start} dan kadaluarsa pada %{date_end}."
+      validity_with_no_expiration: "Kontrak akan efektif pada %{date_start}."
+      validity_started: "Kontrak efektif"
+      validity_ended: "Kontrak kadaluarsa"
+      document_linked: "Document linked by %{actor_name} (%{actor_email})."
+      psre_signing_completed: "Signature by %{actor_name} is completed."
+      psre_signing_failed: "Signature by %{actor_name} is failed."
+      scheduled_send_created: "Scheduled send for %{scheduled_at}"
+      scheduled_send_updated: "Scheduled send updated for %{scheduled_at}"
+      scheduled_send_canceled: "Scheduled send is cancelled"
+      scheduled_send_failed: "Failed to sent"
+    info:
+      created: "Dokumen telah dibuat oleh %{actor_name}."
+      sent: "%{actor_name} mengirim invitation kepada %{recipient_name}."
+      resent: "%{actor_name} mengirim ulang invitation kepada %{recipient_name}."
+      general_action: "%{actor_name} %{action} dokumen."
+      completed: "Dokumen telah selesai."
+      shared: "Dokumen dibagikan kepada %{shared_type} %{shared_message} oleh %{actor_name}."
+      remove_shared: "Dokumen sharing dihapus dari %{shared_type} %{shared_message} oleh %{actor_name}."
+      signing_delegated: "Tanda tangan diteruskan oleh %{actor_name} kepada %{recipient_name}."
+      validity_started: "Kontrak efektif"
+      validity_ended: "Kontrak kadaluarsa"
+      document_linked: "Document linked by %{actor_name} (%{actor_email})."
+      psre_signing_completed: "Signature by %{actor_name} is completed."
+      psre_signing_failed: "Signature by %{actor_name} is failed."
+      scheduled_send_created: "Scheduled send for %{scheduled_at}"
+      scheduled_send_updated: "Scheduled send updated for %{scheduled_at}"
+      scheduled_send_canceled: "Scheduled send is cancelled"
+      scheduled_send_failed: "Failed to sent"
+    template:
+      created: "Created by %{user_full_name} (%{user_email}) in %{folder}"
+      edited: "Edited by %{user_full_name} (%{user_email})"
+      folder_moved: "Moved folder by %{user_full_name} (%{user_email}) in %{folder}"
+      saved: "Changes saved by %{user_full_name} (%{user_email})"
+      moved_to_trash: "Moved by %{user_full_name} (%{user_email}) to Trash"
+      deleted: "Deleted from Trash by %{user_full_name} (%{user_email}"
+      restored: "Restored by %{user_full_name} (%{user_email})"
+  audit_company:
+    event:
+      invitation:
+        invite: "%{actor_name} mengundang %{email} ke perusahaan."
+        reinvite: "%{actor_name} mengirim ulang email undangan ke %{email}."
+        cancel: "%{actor_name} membatalkan undangan ke %{email}."
+        deactivate: "%{actor_name} menonaktifkan %{email}."
+        decline: "%{email} menolak undangan anda."
+        accept: "%{email} menerima undangan anda."
+        change_ownership: "Mentransfer kepemilikan ke %{email}."
+        change_role: "%{actor_name} mengubah peran %{email} menjadi %{role}."
+        activate: "%{actor_name} mengaktifkan %{email}."
+  errors:
+    messages:
+      inclusion: "Tidak termasuk"
+  error:
+    emeterai_temporary_disable: "Fitur eMeterai stamping untuk sementara dinonaktifkan"
+    psre_temporary_disable: "Fitur PSRE feature untuk sementara dinonaktifkan"
+    internal_error: "Terjadi kesalahan"
+    no_routes: "Tidak ada rute yang cocok [%{method}] %{path}"
+    cant_be_processed_contact_cus_suport: "Permintaan Anda untuk %{request_name} tidak dapat kami proses, silakan hubungi Customer suport"
+    validation:
+      unauthorized: "Restricted area!"
+      forbidden: "Forbidden"
+      unprocessable_entity: "Invalid field values"
+      bad_request: "Bad request"
+      not_found: "Not found"
+      not_allowed_special_char: "Not allowed to use special characters"
+      not_allowed_to_do_this_action: "Tidak diperbolehkan melakukan action ini"
+      not_allowed_to_view: "Tidak dapat melihat dokumen"
+      has_already_been_taken: "sudah diambil"
+      invalid_token: "Token tidak valid"
+      invalid_token_format: "Format token tidak valid"
+      not_required: "OTP tidak diperlukan untuk penerima ini"
+      max_attempts_exceeded: "Maksimum percobaan OTP telah tercapai"
+      max_validation_attempts_exceeded: "Maksimum percobaan validasi OTP telah tercapai. Silakan tunggu hingga OTP saat ini kedaluwarsa."
+      active_otp_exists: "OTP yang aktif sudah ada"
+      invalid_format: "OTP harus 6 digit"
+      expired_or_not_found: "OTP telah kedaluwarsa atau tidak ditemukan"
+      invalid_code: "Kode OTP tidak valid"
+      parameter_required: "Param %{param} is required"
+      type_array: "type data harus array"
+      not_registered_user: "Email(%{email}) harus terdaftar sebagai pengguna dan terkonfirmasi"
+      has_no_signature: "Email(%{email}) tidak memiliki tanda tangan"
+      combination_already_exist: "Pembuat dokumen(%{doc_maker_email}) dengan penandatangan(%{signer_email}) sudah terdaftar sebelumnya"
+      parameter_type: "Tipe param %{param} harus integer atau float"
+      image_not_readable: "Image tidak terbaca"
+      document_status: "Dokumen %{doc_status}"
+      already_signed: "Anda telah menandatangani dokumen ini"
+      waiting_signing: "Menunggu ditandatangani oleh %{signer}"
+      error: "Error"
+      delete_child_first: "Tidak bisa menghapus, silakan hapus subfolder terlebih dahulu."
+      delete_contain_first: "Tidak bisa menghapus, silakan hapus isi folder terlebih dahulu."
+      password_required: "Minimal 8 karakter dan maksimal 16 karakter berisi kombinasi minimal satu huruf besar, satu huruf kecil, satu angka dan satu karakter khusus"
+      object_not_found: "%{param} tidak ditemukan"
+      not_allowed_compliances: "Compliances not allowed"
+      string_minimum: "%{param} harus tidak kurang dari #{minimum} karakter"
+      greater_than_or_equal_to: "Harus sama atau lebih besar dari %{count}"
+      approver_only_forbidden: "Anda tidak memiliki izin untuk melakukan tindakan ini"
+      less_or_equal_to: "Harus sama atau kurang dari %{count}"
+      group_name_too_long: "Nama grup & {Param} terlalu panjang (karakter maksuimum adalah 60)"
+      invalid_entity: "%{entity} tidak valid"
+      different_company: "User ada di perusahaan lain"
+      company_ai_feature: "Perusahaan belum mengaktifkan fitur AI"
+      company_extraction_feature: "Fitur document summary belum diaktifkan"
+      already_in_team: "User sudah ada di dalam tim"
+      share_restriction: "Hanya bisa dibagikan kepada User atau Tim"
+      share_within_company: "Hanya bisa dibagikan kepada User atau Tim dalam perusahaan"
+      member_quota_used_exceeded: "Gagal memperbaharui kuota: Melebihi limit pengunaan. %{name} pemakaian : %{used}, kuota: %{quota}"
+      off_site_annotation: "posisi annotation keluar dari kanvas"
+      overlap_meterai_annotation: "posisi anotasi meterai bertumpang tindih dengan anotasi meterai lain"
+      not_valid_date: "Not a valid date"
+      not_a_string: "Not a string"
+      out_of_date_range: "Out of date range"
+      passcode_not_match: "Kode sandi tidak valid"
+      passcode_invalid: 'passcode must min 6-50 char and not use the symbols("<", ">", " ", and "&#")'
+      signature_not_qr: "Tipe tanda tangan harus QR Code"
+      not_date_type: "Harus menggunakan format YYYY-MM"
+      cannot_be_greater_than: "%{subject} tidak dapat lebih besar dari %{max}"
+      phone_country_code_mismatch: "Nomor telepon dan kode negara tidak cocok"
+      feature_emeterai_plus: "Anda menggunakan fitur emeterai_plus"
+      message_too_long: "Message terlalu panjang (maksimal 1000 karakter)"
+      max_recipient_count: "Jumlah maksimal penerima adalah %{max}"
+      user_tilaka_not_found: "Anda belum melakukan pendaftaran eKYC"
+      not_boolean: "Harus berupa boolean"
+      auto_fields: "auto fields hanya bisa ditambahkan pada type signature atau initial"
+      auto_fields_min_height: "The minimum element_height that can be used is %{param} pixels"
+      duplicate_value: "contains duplicate values"
+      envelope_ids_or_envelope_group_ids_must_be_present: "At least one of envelope_ids or envelope_group_ids must be present."
+      comma_delimited: "harus dipisahkan oleh koma"
+      greater_than_or_equal_start_date: "Harus lebih besar dari tanggal mulai"
+      free_user_not_allowed: "user is not allowed to create this feature"
+      not_valid_status: "status %{model} tidak valid"
+      date_params_present: "date atau date start tidak boleh kosong"
+      document_already_completed: "dokumen sudah completed"
+      recipient_already_signed: "already signed"
+      signing_order_must_be_true: "signing order harus di-set true untuk PSrE document"
+      integer_greater_than_or_equal_to: "Harus lebih besar dari atau sama dengan %{minimum} dan harus berupa integer"
+      iso_format_date_time: "must be in ISO 8601 format (e.g., 2025-08-05T23:00:39.277Z)"
+      invalid_date_time: "Waktu tidak valid"
+      time_in_the_past: "Waktu harus di masa depan"
+      must_be_at_least_5_minutes: "Waktu harus setidaknya 5 menit dari sekarang"
+      scheduled_before_validity: "Waktu terjadwal harus sebelum tanggal mulai dan akhir kontrak"
+      envelope_not_in_scheduled_status: "Envelope tidak dalam status terjadwal"
+      cannot_resend_scheduled_envelope: "Tidak dapat mengirim ulang envelope terjadwal"
+    folders:
+      list: "Gagal list folder"
+      create: "Gagal menambah folder"
+      update: "Gagal mengubah folder"
+      delete: "Gagal menghapus folder"
+      already_exist: "Nama folder sudah ada"
+      not_found: "Folder tidak ditemukan"
+      invalid_name: "Nama dokumen tidak boleh mengandung '/'"
+    contacts:
+      cannot_delete: "Anda tidak dapat menghapus diri Anda dari daftar kontak"
+      import_empty_record: "CSV file kosong"
+      import_over_limit_record: "CSV file melebihi batas"
+      import_duplicate_record: "CSV file berisi konten yang duplikat/salah"
+      import_no_valid_record: "CSV file tidak memiliki konten yang valid"
+      csv_file_invalid: "File CSV yang di-uplaod tidak valid. Silakan periksa kembali formatnya dan coba lagi."
+    subscription:
+      type:
+        failed_subscription: "subscription gagal"
+        insuffient_quota: "Kuota %{param} tidak cukup"
+        invalid_subscription: "Subscription tidak valid"
+      instance:
+        additional_quota_exceed: "Kuota tambahan berlebihan. Maksimal kuota tambahan : %{max}, permintaan : %{requested}."
+        additional_quota_update_invalid_package: "Kuota tambahan di paket %{name} tidak diperkenankan untuk diperbaharui."
+        additional_quota_update_not_allowed: "Kuota tambahan tidak diperkenankan untuk diperbaharui."
+    meterai:
+      envelope_meterai_empty: "Envelope Meterai %{envelope_id} kosong"
+      buy:
+        failed_meterai_transaction: "Pembelian meterai gagal"
+      invalid_to_stamp: "tidak sah untuk distempel"
+      stamping_status_inprogress: "Stamping masih dalam proses"
+      not_eligible_to_buy: "Tidak bisa beli meterai"
+      insufficient_quota: "Kuota meterai tidak cukup"
+      quantity_exists: "Isi kuota untuk personal atau untuk perusahaan"
+    payments:
+      payment_method_empty: "Payment method tidak boleh kosong"
+      company_name_empty: "Company name tidak boleh kosong"
+    psre:
+      failed_get_callback: "PSRE Signing Tilaka gagal mendapatkan callback / dokumen signed, request_id : %{request_id}, envelope_id : %{envelope_id}"
+    company:
+      failed_create_company: "Perusahaan gagal di buat"
+    template:
+      folder:
+        parent_not_found: "Parent folder not found"
+        ownership_did_not_match: "Folder ownership did not match"
+        not_found: "Folder not found"
+        root_folder_cannot_be_deleted: "Root folder cannot be deleted"
+      quota:
+        over_limit: "{'required_quota': %{required}, 'available_quota': %{available}}"
+      not_for_auto_sign: "Template tidak terdaftar untuk auto sign"
+      one_creator: "Hanya satu creator role yang diizinkan per template"
+      invalid_annotation_creator: "Creator role can only have Content Fields (qr_code, document_number) or Custom Fields. Invalid types: %{invalid_types}"
+    user_managements:
+      cannot_delete_team_manager: "Anda tidak bisa menghapus user ini karena user ini adalah team manager"
+      company_edit_unauthorized_role: "Anda tidak diizinkan mengubah perusahaan ini"
+      subscription_user_remove:
+        users_not_found: "Pengguna tidak ditemukan"
+        next_subscription_not_found: "Langganan selanjutnya tidak ditemukan"
+      invitation:
+        exists: "User sudah ada dengan status %{status}"
+        cannot_resend: "Tidak dapat mengirim kembali undangan"
+        cannot_decline: "Tidak dapat menolak undangan"
+        cannot_accept: "Tidak dapat menerima undangan, status sudah %{status}"
+        accept_failed: "Gagal menerima undangan, coba beberapa saat lagi"
+        owner_invalid: "Owner tidak valid"
+        role_invalid: "Role tidak valid"
+        cannot_change_owner: "Tidak dapat mengubah user dengan role owner"
+        over_limit: "Kuota undangan telah mencapai batas. Harap hapus undangan lain atau tingkatkan langganan."
+        cannot_delete: "Gagal menghapus user"
+        not_exists: "User tidak terdaftar"
+        cannot_invite_not_in_free_subscription: "Alamat email ini terdaftar di perusahaan lain."
+        cannot_accept_not_in_free_subscription: "Tidak bisa menerima. Tidak dalam langganan gratis."
+        user_not_registered_to_sso: "Alamat email ini tidak terdaftar di SSO."
+    attachments:
+      convert_allowed: "Hanya diperbolehkan format PNG atau JPEG/JPG"
+      convert_failure: "Gagal convert doc dengan kode error: %{code}"
+    delegate_signing:
+      delegate_to_is_invalid: "parameter delegate_to tidak valid (user tidak ditemukan)"
+      user_is_not_in_the_same_company: "Delegated user tidak terdaftar di perusahaan yang sama"
+      user_is_inactive: "Delegated user tidak aktif"
+      user_already_involved: "User ini sudah menjadi signer dalam dokumen ini"
+      psre_requires_registered_user: "Envelope yang sesuai dengan PSRE hanya dapat didelegasikan kepada pengguna terdaftar"
+    envelope:
+      group:
+        document_not_draft: "Dokumen bukan draft"
+        draft_discard: "Only envelope group draft is able to be discarded"
+        add_role_roles_not_array: "Roles must be an array"
+        not_draft: "Kumpulan dokumen bukan draft"
+        not_sent: "Kumpulan dokumen bukan sent"
+        not_global: "Kumpulan dokumen tipe compliance bukan Global"
+        add_role_index_present: "Role index must be present"
+        add_role_title_present: "Role title must be present"
+        add_role_action_present: "Role action must be present"
+        add_role_title_length_exceed: "Role title must not be exceed 25 characters"
+        add_role_action_invalid: "Role action is invalid"
+        envelope_role_not_found: "Envelope group role not found"
+        annotation_roles_not_array: "Annotation roles must be an array"
+        envelope_annotations_not_array: "Envelope annotations must be an array"
+        annotation_roles_role_id_present: "Role ID must be present"
+        annotation_roles_annotations_present: "Annotations must be present"
+        annotation_roles_type_of_present: "At least signature, initial or meterai in annotations"
+        recipients_not_array: "Recipients must be an array"
+        add_recipients_name_present: "Name must be present"
+        add_recipients_email_present: "E-Mail must be present"
+        add_recipients_does_not_match: "Recipients does not match"
+        folder_not_found: "Folder tidak ditemukan"
+        over_limit: '{"required_quota": %{required}, "available_quota": %{available}}'
+        could_not_direct_sign: "Could not direct sign on %{status} status."
+        contract_end_date_is_required: "Tanggal berakhir kontrak diperlukan"
+        already_been_sent: "Envelope group sudah dikirim"
+        empty_recipient: "Penerima kosong"
+        invalid_recipient: "Recipient tidak valid"
+      bulk_send:
+        missing_document_filename: "Nama file dokumen hilang pada baris %{row} (%{cell})."
+        missing_field_role: "Field wajib: %{role} pada baris %{row} (%{cell})."
+        missing_field_role_email: "Field wajib: email %{role} baris %{row} (%{cell})."
+        missing_field_role_name: "Field wajib: nama %{role} baris %{row} (%{cell})."
+        invalid_email_format: "Format email tidak valid untuk %{role} pada baris %{row} (%{cell})."
+        invalid_phone_number: "%{role} memiliki nomor telepon yang tidak valid pada baris %{row} (%{cell})."
+        phone_not_exist: "Nomor telepon %{role} tidak ada pada baris %{row}."
+        invalid_whatsapp_complete: "%{role} memiliki nilai yang salah untuk pengiriman whatsapp lengkap pada baris %{row} (%{cell})."
+        missing_required_field: "Field wajib: %{field_name} baris %{row} (%{cell})."
+        invalid_custom_field_format: "Format input tidak valid untuk %{field_name} pada baris %{row} (%{cell})."
+        duplicate_entries: "Entri duplikat ditemukan pada baris %{row1} dan %{row2}."
+        invalid_excel_format: "Format file Excel tidak valid"
+        excel_file_invalid: "File Excel tidak valid"
+        envelope_group_not_found: "Envelope group tidak ditemukan"
+        envelope_group_not_draft: "Envelope group harus dalam status draft untuk upload ulang"
+        error_processing_file: "Error memproses file Excel: %{error}"
+        data_empty: "Data pada file Excel kosong"
+    register:
+      user: "failed to register user"
+      company: "failed to register company"
+    ratelimit:
+      exceeded: "limit %{limit}, usage %{usage}, remaining %{remaining}, reset in %{reset}"
+    role:
+      not_exists: "Role tidak terdaftar"
+      user_not_exists: "User tidak terdaftar"
+      team_manager_cannot_be_deleted: "Manager team tidak bisa dihapus"
+      team_manager_cannot_be_updated: "Team manager tidak bisa diubah"
+      team_admin_cannot_be_deleted: "Hanya Manager tim yang bisa menghapus Admin tim"
+      can_only_be_team_member: "Anggota perusahaan hanya dapat menjadi anggota tim"
+      company_role_nil: "User tidak memiliki role dalam perusahaan"
+    forbidden: "Anda tidak berwenang untuk melakukan tindakan ini."
+    team:
+      no_member_remain: "Tim harus memiliki setidaknya satu anggota"
+      no_admin_remain: "Tim harus memiliki setidaknya satu admin"
+      envelope_not_in_team: "Envelope not exists in team"
+      free_user_not_allowed: "Free user tidak bisa membuat team"
+      envelope_ids_empty: "Envelope id tidak boleh kosong"
+    company_tilaka:
+      not_found: "Perusahaan belum memiliki kanal sendiri untuk PSrE"
+    envelope_comments:
+      user_not_approvers: "User bukan approver"
+      user_not_recipients: "User bukan recipient"
+      parent_not_found: "Bukan parent atau parent tidak ditemukan"
+      comment_length_exceed: "Panjang komentar tidak boleh lebih dari 250 karakter"
+    insight:
+      signing:
+        csv:
+          request_already_exists: "Permintaan sedang diproses, coba lagi dalam %{ttl}."
+    document_extraction:
+      fallback: "Informasi pada bagian ini tidak tercantum secara jelas di dalam dokumen."
+      status_not_extracted: "Hanya Extraction dengan status extracted yang bisa di-update"
+      json_params_type: "Params harus berupa objek JSON yang valid"
+      invalid_keys: "Params mengandung key yang tidak valid: %{invalid_keys}"
+    signing:
+      failed_cert: "Gagal tandatangan dengan sertifikat. Silakan coba beberapa saat."
+  success:
+    ok: "Berhasil"
+    folders:
+      list: "Berhasil list folder"
+      create: "Berhasil menambah folder"
+      update: "Berhasil mengubah folder"
+      delete: "Berhasil menghapus folder"
+  activerecord:
+    errors:
+      messages:
+        inclusion: "Tidak termasuk"
+        blank: "Input tidak boleh kosong"
+        already_exist: "Attachment`s sudah ada"
+        record_not_found: "%{model} tidak dapat ditemukan"
+        greater_than_or_equal_to: "Harus sama atau lebih besar dari %{count}"
+        greater_than: "Harus lebih besar dari %{count}"
+        less_or_equal_to: "File harus sama atau kurang dari %{count}"
+        content_type_invalid: "File extension tidak mendukung"
+        have_certificate: "File sudah memiliki sertifikat"
+        docmdp_not_allowed: "File sudah memiliki sertifikat level 1 (tidak bisa dimodifikasi)"
+        have_password: "File memiliki kata sandi"
+        invalid_structure: "Kami mengalami masalah saat memproses file Anda, harap periksa kembali format PDF Anda."
+        malformed: "File malformed, harap periksa kembali format PDF Anda."
+        secured: "File ini dilindungi"
+        query_canceled: "kueri dibatalkan"
+        timeout: "semua koneksi gabungan sedang digunakan"
+        deadlocked: "terdeteksi deadlock"
+        general: "Tidak dapat memproses permintaan Anda. Silakan coba lagi setelah beberapa saat."
+  activemodel:
+    errors:
+      models:
+        buy_meterai_validation:
+          attributes:
+            type_of:
+              blank: "Input tidak boleh kosong"
+              inclusion: "Tidak terdaftar"
+            qty:
+              blank: "Input tidak boleh kosong"
+              not_a_number: "Input bukan angka"
+              greater_than_or_equal_to: "Harus sama atau lebih besar dari %{count}"
+  user:
+    error:
+      messages:
+        unregistered: "Email tidak terdaftar"
+        account_incorrect: "Email atau kata sandi tidak benar"
+        unconfirm: "Email belum dikonfirmasi"
+        email_available: "Email tersedia"
+        email_registered: "Email sudah terdaftar"
+        email_invalid: "Email tidak valid"
+        phone_invalid: "Nomor telepon tidak valid"
+        full_name_invalid: "Nama lengkap tidak valid"
+        number_invalid: "Nomor tidak valid"
+        url_invalid: "Url tidak valid"
+        invalid_company_name: "Nama perusahaan tidak valid"
+        password_not_correct: "Kata sandi tidak benar"
+        pass_incorrect: "Kata sandi saat ini tidak benar"
+        password_same_as_old_password: "Tidak dapat mengubah kata sandi baru dengan kata sandi lama"
+        inactive: "Akun tidak aktif. Hubungi perusahaan anda untuk keterangan lebih lanjut."
+        without_workspace: "User tidak memiliki workspace"
+        industry_not_found: "Industry tidak ditemukan"
+        user_not_owner: "User bukan owner"
+    success:
+      messages:
+        integration_deleted: "Integrasi %{integration} dihapus"
+  contract:
+    error:
+      messages:
+        greater_than_or_equal_to: "Harus lebih besar dari tanggal mulai kontrak"
+        already_as_a_contract: "sudah dilacak sebagai kontrak"
+        not_contract: "bukan kontrak"
+  email:
+    resend_email: "Berhasil. Email telah terkirim jika email terdaftar dan belum dikonfirmasi."
+    signing_reminder:
+      subject:
+        template1: "Anda memiliki dokumen untuk ditandatangani"
+        template2: "Dokumen akan kedaluwarsa dalam 30 hari"
+        template3: "Dokumen akan kedaluwarsa dalam 7 hari"
+        template_by_day: "Dokumen akan kedaluwarsa dalam %{days} hari"
+
+  kyc:
+    error:
+      unregister: "Silakan mendaftar kyc terlebih dahulu"
+      email_registered: "Email telah terdaftar, mohon hubungi customer support kami"
+      email_verified: "Email telah terverifikasi, mohon segarkan halaman"
+      request_id_used: "Request id telah digunakan, mohon hubungi customer support kami"
+      generate_id: "Gagal generate registration_id"
+      verification: "Gagal verifikasi"
+      certificate: "Gagal mendapatkan sertifikat"
+      register: "Gagal registrasi"
+      revoke: "Gagal revoke sertifikat"
+      reset_password: "Gagal generate reset password"
+      approve_certificate: "Gagal approve cert data"
+      invalid_registration_id: "register_id is not valid"
+      valid_registration_id_exist: "Anda sudah memiliki registrasi yang valid"
+      insuffient_quota: "Anda tidak memiliki kuota untuk melakukan kyc"
+      invalid_channel: "Channel milik perusahaan tidak valid"
+      no_active_certificate: "User tidak memiliki sertifikat aktif"
+      no_active_autosign: "User belum mengaktifkan PSrE autosign"
+      already_active_autosign: "User sudah mengaktifkan PSrE autosign sebelumnya"
+  kyb:
+    error:
+      no_active_certificate: "Perusahaan tidak memiliki sertifikat aktif"
+      free_user_not_allowed: "Free user tidak diizinkan membuat stamps lebih dari 1"
+  annotation:
+    error:
+      signature: "Penempatan maksimum adalah %{limit} tanda tangan"
+      meterai: "Penempatan maksimum adalah %{limit} eMeterai"
+      signing_order_psre: "Tanda tangan harus berurutan"
+      annotation_psre_over_limit: "jumlah annotation bulk sign psre dalam 1 dokumen tidak boleh lebih dari 1"
+      annotation_allowed: "Hanya signature, initial, dan meterai yang diperbolehkan"
+      signer_has_no_annotation: "salah satu penandatangan tidak memiliki anotasi"
+      stamp_not_allowed_on_psre: "PSRE dokumen tidak diizinkan menggunakan anotasi stamp"
+      signing_order: "Signing harus berurutan"
+      signing_unorder: "Signing order must be parallel (0)"
+      must_have_signer: "harus memiliki setidaknya 1 signer"
+
+  subscription:
+    error:
+      upgrade: "Tidak dapat meningkatkan langganan dengan paket yang sama atau lebih rendah"
+      new: "Tidak dapat membeli langganan dengan paket yang lebih rendah"
+      ai_package: "Paket perusahaan tidak memiliki fitur AI"
+      extraction_package: "Paket perusahaan tidak memiliki document summary instance"
+
+  webhooks:
+    errors:
+      send_failed: "Gagal mengirim webhook callback"
+      callback_url_empty: "Callback url tidak boleh kosong"
+      callback_host_not_known: "Callback host tidak dikenali"
+      callback_payload_empty: "Callback payload tidak boleh kosong"
+  envelopes:
+    errors:
+      document_attachment_type: "Attachment dokumen tidak valid, valid tipe dokumen adalah: doc dan signed_doc"
+  time:
+    formats:
+      default: "%d %B %Y"
+  date:
+    month_names:
+      -
+      - Januari
+      - Februari
+      - Maret
+      - April
+      - Mei
+      - Juni
+      - Juli
+      - Agustus
+      - September
+      - Oktober
+      - November
+      - Desember
+  user_notification_setting:
+    document_need_sign: "Dokumen perlu ditandatangani"
+    document_signed: "Dokumen ditandatangani oleh penerima"
+    emeterai_stamping: "Pengecapan eMeterai sedang berlangsung"
+    emeterai_stamped: "Pengecapan eMeterai selesai"
+    document_completed: "Dokumen sudah dilengkapi oleh semua penerima"
+    document_declined: "Dokumen ditolak oleh penerima"
+    document_voided: "Dokumen dibatalkan oleh pembuat dokumen"
+    document_viewed: "Dokumen dilihat oleh penerima"
+    document_expiring: "Dokumen akan habis masa berlakunya dalam 120 hari"
+    document_expired: "Dokumen kedaluwarsa setelah 120 hari"
+    reminder_contract: "Pengingat perpanjangan kontrak"
+    document_rejected: "Dokumen ditolak oleh penerima"
+    document_approval_request: "Dokumen membutuhkan persetujuan"
+    document_need_revision: "Dokumen membutuhkan revisi"
+    document_approved: "Dokumen disetujui oleh pemberi persetujuan"
+    document_approval_completed: "Dokumen selesai disetujui"
+    document_completed_whatsapp_for_doc_maker: " Notifikasi WhatsApp ketika dokumen sudah dilengkapi untuk pembuat dokumen"
+    approval_request: "Permintaan persetujuan"
+    approval_approved: "Permintaan persetujuan disetujui"
+    approval_rejected: "Permintaan persetujuan ditolak"
+    approval_cancelled: "Permintaan persetujuan dibatalkan"
+  approval_workflows:
+    success:
+      deleted: "Approval workflow dihapus"
+      created: "Approval workflow dibuat"
+      updated: "Approval workflow diperbaharui"
+      envelope_created: "Envelope approval workflow dibuat"
+      envelope_updated: "Envelope approval workflow diperbaharui"
+    validation:
+      name_exist: "Terdapat pengaturan dengan nama yang sama"
+      duplicated_approver: "Tidak dapat menambahkan user yang sama sebagai approver"
+      not_your_turn: "Bukan giliranmu untuk %{action}"
+  file_integration:
+    validation:
+      expiry_not_set: "Gagal mendapatkan kedaluwarsa token"
+  approval_requests:
+    success:
+      created: "Permintaan persetujuan berhasil dibuat"
+      sent: "Permintaan persetujuan berhasil dikirim"
+      uploaded: "Dokumen berhasil diunggah"
+    validation:
+      not_a_docmaker: "Pengguna bukan pembuat persetujuan"
+      already_sent: "Permintaan persetujuan sudah dikirim"
+      not_waiting_approval: "Hanya approval request yang masih mengunggu persetujuan yang bisa dikirim ulang"
+      max_attachment: "Hanya bisa upload maksimal %{max} dokumen"
+      max_download: "Hanya bisa download maksimal %{max} dokumen"
+      id_not_found: "ID tidak ditemukan"
+  approval_forms:
+    success:
+      created: "Approval form berhasil dibuat"
+      updated: "Approval form berhasil diperbaharui"
+      deleted: "Approval form berhasil dihapus"
+    validation:
+      too_long: "%{field} terlalu panjang (maksimal %{max} karakter)"
+      blank: "tidak boleh kosong dan harus berupa array"
+      min_count: "harus memiliki setidaknya %{count} pertanyaan"
+      max_count: "tidak boleh melebihi %{count} pertanyaan"
+      required_field: "%{field} diperlukan untuk pertanyaan #%{index}"
+      question_length: "teks pertanyaan untuk #%{index} tidak boleh melebihi %{max} karakter"
+      description_length: "deskripsi untuk #%{index} tidak boleh melebihi %{max} karakter"
+      invalid_type: "tipe '%{type}' tidak valid untuk pertanyaan #%{index}. Tipe yang diizinkan: %{allowed_types}"
+      invalid_options: "pertanyaan #%{index} bertipe 'option' tetapi tidak memiliki pilihan yang valid"
+      max_options: "pilihan untuk pertanyaan #%{index} tidak boleh melebihi %{max}"
+      option_required_field: "%{field} diperlukan untuk pilihan #%{option_index} dalam pertanyaan #%{question_index}"
+      option_length: "teks pilihan untuk #%{option_index} dalam pertanyaan #%{question_index} tidak boleh melebihi %{max} karakter"
+      invalid_option_type: "tipe '%{type}' tidak valid untuk pilihan #%{option_index} dalam pertanyaan #%{question_index}. Tipe yang diizinkan: %{allowed_types}"
+      rate_options_required: "pertanyaan #%{index} bertipe 'rate' tetapi tidak memiliki question_options yang valid"
+      rate_options_missing_fields: "pertanyaan #%{index} rate options harus menyertakan: %{fields}"
+      rate_must_be_integer: "pertanyaan #%{index} start_rate dan end_rate harus berupa bilangan bulat"
+      invalid_rate_range: "pertanyaan #%{index} start_rate harus lebih kecil dari end_rate"
+      reminder_boolean: "harus berupa true atau false"
+      permissions_array: "harus berupa array"
+      invalid_actor_type: "mengandung actor_type yang tidak valid pada indeks %{index}"
+      layers_cannot_be_empty: "tidak boleh kosong"
+      invalid_rule: "mengandung aturan yang tidak valid pada lapisan %{layer}"
+      empty_users: "mengandung pengguna kosong pada lapisan %{layer}"
+      invalid_user: "mengandung pengguna yang tidak valid pada indeks %{index}"
+      different_company: "mengandung pengguna dari perusahaan berbeda pada indeks %{index}"
+      not_found_or_not_accessible: "Form tidak ditemukan atau anda tidak memiliki akses ke form tersebut"
+  access_requests:
+    not_same_company: "User tidak terdaftar di perusahaan yang sama"
+    invalid_user: "User tidak valid"
+    no_access: "User tidak memiliki akses"
+    not_admin_or_owner: "User bukan admin atau owner"
+  user_approvals:
+    success:
+      submitted: "Formulir berhasil dikirim"
+    destroy:
+      form_instance_not_found: "Form instance tidak ditemukan"
+      unauthorized: "Anda tidak memiliki izin untuk menghapus form instance ini"
+    validation:
+      form_not_found: "Form persetujuan tidak ditemukan"
+      form_not_published: "Form persetujuan belum dipublikasikan"
+      question_missing_field: "%{field} diperlukan untuk pertanyaan #%{index}"
+      invalid_question_type: "tipe '%{type}' tidak valid untuk pertanyaan #%{index}"
+      answer_required: "jawaban diperlukan untuk pertanyaan #%{index}"
+      invalid_rate_answer: "jawaban rating harus antara 1-5 untuk pertanyaan #%{index}"
+      questions_not_in_form: "pertanyaan dengan ID %{ids} tidak termasuk dalam form ini"
+      questions_not_found: "pertanyaan dengan ID %{ids} tidak ditemukan"
+      invalid_answered_at_format: "answered_at memiliki format datetime yang tidak valid untuk pertanyaan #%{index}"
+      form_instance_not_found: "Form instance tidak ditemukan"
+      form_instance_access_denied: "Anda tidak memiliki akses ke form instance ini"
+      question_not_found: "Pertanyaan tidak ditemukan"
+      question_not_belongs_to_form_instance: "Pertanyaan tidak termasuk dalam form instance ini"
+      question_must_be_file_type: "Pertanyaan harus bertipe file untuk mengunggah file"
+  signing:
+    validation:
+      not_your_turn: "Akses belum tersedia saat ini"
+      deadline_exceeded: "Dokumen telah kedaluwarsa"
+      not_supported_image_type: "Format harus dalam bentuk PNG, JPG, JPEG"
+      no_estamp: "Tidak ada eStamp yang tersedia"
+      invalid_cert: "Sertifikat tidak valid"
+      inactive_cert: "Sertifikat sudah tidak aktif"
+      wrong_compliance: "Tidak bisa melanjutkan compliance ini"
+      not_your_turn_to_sign: "Penandatanganan belum tersedia untuk Anda"
+      bulk_sign_package: "Paket perusahaan anda tidak mempunyai fitur bulk sign"
+      envelope_archived: "Envelope sudah diarsipkan"
+      encryption_failed: "Enkripsi %{status} signing envelope gagal"
+      envelope_edited: "Dokumen ini telah diedit"

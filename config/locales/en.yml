@@ -1,0 +1,664 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " and "
+      last_word_connector: ", and "
+  hello: "Hello world"
+  document_status:
+    signed: "Signed"
+    viewed: "Viewed"
+    sealed: "Sealed"
+    sent: "Sent"
+  audit_trails:
+    report:
+      sent: "Sent for signature to %{recipient_name} from %{actor_name} (%{actor_email})."
+      resent: "Resent for signature to %{recipient_name} from %{actor_name} (%{actor_email})."
+      general_action: "%{action} by %{actor_name} (%{actor_email})."
+      completed: "The document has been completed."
+      requested: "Signature is on progress."
+      approved: "Signature by %{actor_name} is completed."
+      shared: "Document shared to %{shared_type} %{shared_message} by %{actor_name}."
+      remove_shared: "Remove shared document from %{shared_type} %{shared_message} by %{actor_name}."
+      signing_delegated: "Forwarded signing by %{actor_name} to %{recipient_name}."
+      approval_approved: "Approved by %{actor_name}."
+      approval_rejected: "Rejected by %{actor_name}."
+      approval_created: "Created by %{actor_name}."
+      approval_updated: "Edited by %{actor_name}."
+      approval_need_revision: "Suggest revision by %{actor_name}."
+      validity_started: "Contract is effective"
+      validity_ended: "Contract is expired"
+      document_linked: "Document linked by %{actor_name} (%{actor_email})."
+      psre_signing_completed: "Signature by %{actor_name} is completed."
+      psre_signing_failed: "Signature by %{actor_name} is failed."
+      scheduled_send_created: "Scheduled send for %{scheduled_at}"
+      scheduled_send_updated: "Scheduled send updated for %{scheduled_at}"
+      scheduled_send_canceled: "Scheduled send is cancelled"
+      scheduled_send_failed: "Failed to sent"
+    info:
+      created: "Document was created by %{actor_name}."
+      sent: "%{actor_name} sent an invitation to %{recipient_name}."
+      resent: "%{actor_name} resent an invitation to %{recipient_name}."
+      general_action: "%{actor_name} %{action} the document."
+      completed: "The document has been completed."
+      shared: "Document shared to %{shared_type} %{shared_message} by %{actor_name}."
+      remove_shared: "Remove shared document from %{shared_type} %{shared_message} by %{actor_name}."
+      signing_delegated: "Forwarded signing by %{actor_name} to %{recipient_name}."
+      deadline: "%{day} days after recipient receives documents."
+      validity: "Contract will be effective on %{date_start} and expired on %{date_end}."
+      validity_with_no_expiration: "Contract will be effective on %{date_start}."
+      validity_started: "Contract is effective"
+      validity_ended: "Contract is expired"
+      document_linked: "Document linked by %{actor_name} (%{actor_email})."
+      psre_signing_completed: "Signature by %{actor_name} is completed."
+      psre_signing_failed: "Signature by %{actor_name} is failed"
+      scheduled_send_created: "Scheduled send for %{scheduled_at}"
+      scheduled_send_updated: "Scheduled send updated for %{scheduled_at}"
+      scheduled_send_canceled: "Scheduled send is cancelled"
+      scheduled_send_failed: "Failed to sent"
+    template:
+      created: "Created by %{user_full_name} (%{user_email}) in %{folder}"
+      edited: "Edited by %{user_full_name} (%{user_email})"
+      folder_moved: "Moved folder by %{user_full_name} (%{user_email}) in %{folder}"
+      saved: "Changes saved by %{user_full_name} (%{user_email})"
+      moved_to_trash: "Moved by %{user_full_name} (%{user_email}) to Trash"
+      deleted: "Deleted from Trash by %{user_full_name} (%{user_email}"
+      restored: "Restored by %{user_full_name} (%{user_email})"
+  audit_company:
+    event:
+      invitation:
+        invite: "%{actor_name} invited %{email} to the company."
+        reinvite: "%{actor_name} resend an invitation email to %{email}."
+        cancel: "%{actor_name} canceled the invitation to %{email}."
+        deactivate: "%{actor_name} deactivated %{email}."
+        decline: "%{email} rejected your invitation."
+        accept: "%{email} accepted your invitation."
+        change_ownership: "Transfer ownership to %{email}."
+        change_role: "%{actor_name} changes this email %{email} role to %{role}."
+        activate: "%{actor_name} activate %{email}."
+  package:
+    description:
+      free: "For personal use"
+      starter: "For small-sized business"
+      pro: "For medium-sized business"
+      business: "For large-sized business"
+      custom: "Custom Package"
+  error:
+    emeterai_temporary_disable: "The eMeterai stamping process is temporarily disabled due to a third-party issue"
+    psre_temporary_disable: "The PSRE feature is temporarily disabled due to a third-party issue"
+    internal_error: "Something went wrong"
+    no_routes: "No route matches [%{method}] %{path}"
+    validation_error: "Validation error"
+    cant_be_processed_contact_cus_suport: "Your request to %{request_name} can not be processed, please contact our Customer support"
+    validation:
+      unauthorized: "Restricted area!"
+      forbidden: "Forbidden"
+      unprocessable_entity: "Invalid field values"
+      bad_request: "Bad request"
+      not_found: "Not found"
+      not_allowed_special_char: "Not allowed to use special characters"
+      not_allowed_to_do_this_action: "You`re not allowed to do this action"
+      not_allowed_to_view: "Unable to view the document"
+      has_already_been_taken: "has already been taken"
+      invalid_token: "Invalid token"
+      invalid_token_format: "Invalid token format"
+      not_required: "OTP is not required for this recipient"
+      max_attempts_exceeded: "Maximum OTP attempts exceeded"
+      max_validation_attempts_exceeded: "Maximum OTP validation attempts exceeded. Please wait for the current OTP to expire."
+      active_otp_exists: "An active OTP already exists"
+      invalid_format: "OTP must be 6 digits"
+      expired_or_not_found: "OTP has expired or not found"
+      invalid_code: "Invalid OTP code"
+      parameter_required: "Param %{param} is required"
+      type_array: "Data type must be array"
+      not_registered_user: "Email(%{email}) must be registered as a user and confirmed"
+      has_no_signature: "Email(%{email}) has no signature"
+      combination_already_exist: "Doc maker(%{doc_maker_email}) with signer(%{signer_email}) already exist"
+      parameter_type: "Param %{param} type must be integer or float"
+      image_not_readable: "Image not readable"
+      document_status: "Document %{doc_status}"
+      already_signed: "You already signed this document"
+      waiting_signing: "Waiting to be signed by %{signer}"
+      error: "Error"
+      delete_child_first: "Can't delete, please delete subfolder first."
+      delete_contain_first: "Can't delete, please delete the files inside the folder first."
+      password_required: "Minimum 8 characters and maximum 16 characters contains a combination of at least one uppercase letter, one lowercase letter, one number and one special character"
+      object_not_found: "%{param} not found"
+      not_allowed_compliances: "Compliances not allowed"
+      string_minimum: "%{param} must be at least #{minimum} characters"
+      greater_than_or_equal_to: "Must be greater than or equal to %{count}"
+      approver_only_forbidden: "You do not have permission to do this action"
+      less_or_equal_to: "Should be less than or equal to %{count}"
+      group_name_too_long: "Group name & {Param} is too long (maximum is 60 characters)"
+      invalid_entity: "%{entity} invalid"
+      different_company: "User is from a different company"
+      company_ai_feature: "Company not yet activate AI feature"
+      company_extraction_feature: "Document summany feature currently not enabled"
+      already_in_team: "User is already in the team"
+      share_restriction: "Can only be shared with Users or Teams"
+      share_within_company: "Can only be shared with Users or Teams within company"
+      member_quota_used_exceeded: "Unable to Update Quota: Exceeded Usage Limit. %{name} used : %{used}, quota: %{quota}"
+      off_site_annotation: "annotation position off the canvas"
+      overlap_meterai_annotation: "meterai annotation is overlapping with another meterai annotation"
+      not_valid_date: "Not a valid date"
+      not_a_string: "Not a string"
+      out_of_date_range: "Out of date range"
+      passcode_not_match: "Invalid passcode"
+      passcode_invalid: 'passcode must min 6-50 char and not use the symbols("<", ">", " ", and "&#")'
+      signature_not_qr: "Signature type must be QR Code"
+      not_date_type: "Format must be YYYY-MM"
+      cannot_be_greater_than: "%{subject} can not be greater than %{max}"
+      phone_country_code_mismatch: "Phone number and country code mismatch"
+      feature_emeterai_plus: "You are using the emeterai_plus feature"
+      message_too_long: "Message is too long (maximum is 1000 characters)"
+      max_recipient_count: "Maximum number of recipients is %{max}"
+      user_tilaka_not_found: "You have not yet registered for eKYC"
+      not_boolean: "Not a boolean"
+      auto_fields: "auto fields can only be added using a type signature or initial"
+      auto_fields_min_height: "The minimum element_height that can be used is %{param} pixels"
+      duplicate_value: "contains duplicate values"
+      envelope_ids_or_envelope_group_ids_must_be_present: "At least one of envelope_ids or envelope_group_ids must be present."
+      comma_delimited: "must be a comma-delimited string"
+      greater_than_or_equal_start_date: "Must be greater than date start"
+      free_user_not_allowed: "user is not allowed to create this feature"
+      not_valid_status: "%{model} status is not valid"
+      date_params_present: "date or date start can't be blank"
+      document_already_completed: "document already completed"
+      recipient_already_signed: "already signed"
+      signing_order_must_be_true: "signing order must be true for PSrE document"
+      integer_greater_than_or_equal_to: "Must be greater than or equal to %{minimum} and must be an integer"
+      iso_format_date_time: "must be in ISO 8601 format (e.g., 2025-08-05T23:00:39.277Z)"
+      invalid_date_time: "date invalid"
+      time_in_the_past: "must be in the future"
+      must_be_at_least_5_minutes: "must be at least 5 minutes from the current time"
+      scheduled_before_validity: "must be before the contract effective and expiration date"
+      envelope_not_in_scheduled_status: "envelope is not in scheduled status"
+      cannot_resend_scheduled_envelope: "cannot resend scheduled envelope"
+    folders:
+      list: "Failed list folder"
+      create: "Failed create folder"
+      update: "Failed update folder"
+      delete: "Failed delete folder"
+      already_exist: "Folder name already exist"
+      not_found: "Folder not found"
+      invalid_name: "Envelope name cannot contain '/'"
+    contacts:
+      cannot_delete: "You cannot delete yourself from contact list"
+      import_empty_record: "CSV file record is empty"
+      import_over_limit_record: "CSV file record is over limit"
+      import_duplicate_record: "CSV file record is contain invalid/duplicate value"
+      import_no_valid_record: "CSV file record has no valid records"
+      csv_file_invalid: "The uploaded file is not a valid CSV. Please check the format and try again."
+    subscription:
+      type:
+        failed_subscription: "Create subscription failed"
+        insuffient_quota: "Insufficient %{param} quota"
+        invalid_subscription: "Invalid subscription"
+      instance:
+        additional_quota_exceed: "Additional quota exceed. Maximum additional quota : %{max}, requested : %{requested}."
+        additional_quota_update_invalid_package: "Additional quota on package %{name} is not allowed to be updated."
+        additional_quota_update_not_allowed: "Additional quota is not allowed to be updated."
+    meterai:
+      envelope_meterai_empty: "Envelope Meterai %{envelope_id} is empty"
+      buy:
+        failed_meterai_transaction: "Buy meterai failed"
+      invalid_to_stamp: "is not valid to stamp"
+      stamping_status_inprogress: "Stamping is still in progress"
+      not_eligible_to_buy: "Not eligible to buy meterai"
+      insufficient_quota: "Insufficient meterai quota"
+      quantity_exists: "Provide quota for personal or company"
+      update_sn_max_attempts_reached: "Update SN max attempts reached"
+      update_sn_failed: "Update SN detail failed"
+    payments:
+      payment_method_empty: "Payment method empty"
+      company_name_empty: "Company name empty"
+    psre:
+      failed_get_callback: "PSRE Signing Tilaka failed to get callback / signed document, request_id : %{request_id}, envelope_id : %{envelope_id}"
+    company:
+      failed_create_company: "Failed created company"
+    template:
+      folder:
+        parent_not_found: "Parent folder not found"
+        ownership_did_not_match: "Folder ownership did not match"
+        not_found: "Folder not found"
+        root_folder_cannot_be_deleted: "Root folder cannot be deleted"
+      quota:
+        over_limit: '{"required_quota": %{required}, "available_quota": %{available}}'
+      not_for_auto_sign: "Template is not registered for auto sign"
+      one_creator: "Only one creator role allowed per template"
+      invalid_annotation_creator: "Creator role can only have Content Fields (qr_code, document_number) or Custom Fields. Invalid types: %{invalid_types}"
+    user_managements:
+      cannot_delete_team_manager: "You can't delete this account because this account is a team manager"
+      company_edit_unauthorized_role: "You are not allowed to edit this company"
+      subscription_user_remove:
+        users_not_found: "Users not found"
+        next_subscription_not_found: "Next subscription not found"
+      invitation:
+        exists: "User exists with status %{status}"
+        cannot_resend: "Can't resend invitation"
+        cannot_decline: "Can't decline invitation"
+        cannot_accept: "Can't accept invitation, status already %{status}"
+        accept_failed: "Failed to accept invitation, try again in a few minutes"
+        owner_invalid: "Invalid owner"
+        role_invalid: "Invalid role"
+        cannot_change_owner: "Can't change owner role"
+        over_limit: "The invitation quota has reached the limit. Please delete other invitations or upgrade plan."
+        cannot_delete: "Can't delete user"
+        not_exists: "User not exists"
+        cannot_invite_not_in_free_subscription: "This email address is already registered in another company."
+        cannot_accept_not_in_free_subscription: "Tidak bisa menerima. Tidak dalam langganan gratis."
+        user_not_registered_to_sso: "This email address is not registered to SSO."
+    attachments:
+      convert_allowed: "Only PNG or JPEG/JPG allowed"
+      convert_failure: "Failed to convert doc with error code: %{code}"
+    delegate_signing:
+      delegate_to_is_invalid: "delegate_to param is invalid (user not found)"
+      user_is_not_in_the_same_company: "Delegated user is not in the same company"
+      user_is_inactive: "Delegated user is inactive"
+      user_already_involved: "This user is already assigned as the signer in this document"
+      psre_requires_registered_user: "PSRE compliant envelopes can only be delegated to registered users"
+    envelope:
+      group:
+        document_not_draft: "Document is not draft"
+        draft_discard: "Only envelope group draft is able to be discarded"
+        add_role_roles_not_array: "Roles must be an array"
+        not_draft: "Envelope group is not draft"
+        not_sent: "Envelope group is not sent"
+        not_global: "Envelope group compliance type is not Global"
+        add_role_index_present: "Role index must be present"
+        add_role_title_present: "Role title must be present"
+        add_role_action_present: "Role action must be present"
+        add_role_title_length_exceed: "Role title must not be exceed 25 characters"
+        add_role_action_invalid: "Role action is invalid"
+        envelope_role_not_found: "Envelope group role not found"
+        annotation_roles_not_array: "Annotation roles must be an array"
+        envelope_annotations_not_array: "Envelope annotations must be an array"
+        annotation_roles_role_id_present: "Role ID must be present"
+        annotation_roles_annotations_present: "Annotations must be present"
+        annotation_roles_type_of_present: "At least signature, initial or meterai in annotations"
+        recipients_not_array: "Recipients must be an array"
+        add_recipients_name_present: "Name must be present"
+        add_recipients_email_present: "E-Mail must be present"
+        add_recipients_does_not_match: "Recipients does not match"
+        folder_not_found: "Folder not found"
+        over_limit: '{"required_quota": %{required}, "available_quota": %{available}}'
+        could_not_direct_sign: "Could not direct sign on %{status} status."
+        contract_end_date_is_required: "Contract end date is required"
+        already_been_sent: "Envelope group has already been sent"
+        empty_recipient: "Recipient empty"
+        recipient_not_found: "Recipient not found"
+        invalid_recipient: "Recipient is invalid"
+      bulk_send:
+        missing_document_filename: "Missing document filename on row %{row} (%{cell})."
+        missing_field_role: "Missing field: %{role} on row %{row} (%{cell})."
+        missing_field_role_email: "Missing field: %{role} email on row %{row} (%{cell})."
+        missing_field_role_name: "Missing field: %{role} name on row %{row} (%{cell})."
+        invalid_email_format: "Invalid email format for %{role} on row %{row} (%{cell})."
+        invalid_phone_number: "%{role} have Invalid phone number on row %{row} (%{cell})."
+        phone_not_exist: "%{role} phone number is not exist on row %{row}."
+        invalid_whatsapp_complete: "%{role} have wrong value for sending complete whatsapp on row %{row} (%{cell})."
+        missing_required_field: "Missing field: %{field_name} on row %{row} (%{cell})."
+        invalid_custom_field_format: "Invalid input format for %{field_name} on row %{row} (%{cell})."
+        duplicate_entries: "Duplicate entries found on row %{row1} and %{row2}."
+        invalid_excel_format: "Invalid Excel file format"
+        excel_file_invalid: "Excel file is invalid"
+        envelope_group_not_found: "Envelope group not found"
+        envelope_group_not_draft: "Envelope group must be in draft status for re-upload"
+        error_processing_file: "Error processing Excel file: %{error}"
+        data_empty: "No data found in the uploaded file."
+    register:
+      user: "failed to register user"
+      company: "failed to register company"
+    ratelimit:
+      exceeded: "limit %{limit}, usage %{usage}, remaining %{remaining}, reset in %{reset}"
+    role:
+      not_exists: "Role not exists"
+      user_not_exists: "User not exists"
+      user_not_in_team: "User not exists in team"
+      can_only_be_team_member: "Company member can only be team member"
+      company_role_nil: "User has no role in the company"
+      team_manager_cannot_be_deleted: "Team manager cannot be deleted"
+      team_manager_cannot_be_updated: "Team manager cannot be updated"
+      team_admin_cannot_be_deleted: "Only Team manager who can delete team admin"
+    forbidden: "You are not authorized to perform this action."
+    team:
+      no_member_remain: "Team must have at least one member"
+      no_admin_remain: "Team must have at least one admin"
+      envelope_not_in_team: "Envelope not exists in team"
+      free_user_not_allowed: "Free user not allowed to create team"
+      envelope_ids_empty: "Envelope ids cannot be empty"
+    company_tilaka:
+      not_found: "Company does not have their own Tilaka Channel"
+    envelope_comments:
+      user_not_approvers: "User is not an approver"
+      user_not_recipients: "User is not a recipient"
+      parent_not_found: "Not a parent or parent not found"
+      comment_length_exceed: "Comment length must not exceed 250 characters"
+    insight:
+      signing:
+        csv:
+          request_already_exists: "Request is in progress, please try again in %{ttl}."
+    document_extraction:
+      fallback: "Value of the field is not explicitly declared in the document"
+      status_not_extracted: "Extraction can only be refined when status is extracted"
+      json_params_type: "Params must be a valid JSON object"
+      invalid_keys: "Params contain invalid keys: %{invalid_keys}"
+    signing:
+      failed_cert: "Failed to sign with certificate. Please try again later."
+  success:
+    ok: "success"
+    folders:
+      list: "Success list folder"
+      create: "Success create folder"
+      update: "Success update folder"
+      delete: "Success delete folder"
+  activerecord:
+    errors:
+      messages:
+        inclusion: "Is not included in the list"
+        blank: "Input cannot blank"
+        already_exist: "Attachment`s already exist"
+        record_not_found: "Couldn't find %{model}"
+        greater_than_or_equal_to: "Must be greater than or equal to %{count}"
+        greater_than: "Must be greater than %{count}"
+        less_or_equal_to: "File should be less than or equal to %{count}"
+        content_type_invalid: "File extension is not supported"
+        have_certificate: "File already has a certificate"
+        docmdp_not_allowed: "File already has a certificate level 1 (cannot modify)"
+        have_password: "File has a password"
+        invalid_structure: "We’re having trouble to process your file, please double check your PDF format."
+        malformed: "File is malformed, please double check your PDF format."
+        secured: "File has protection"
+        query_canceled: "query canceled"
+        timeout: "all pooled connections were in use"
+        deadlocked: "deadlock detected"
+        general: "Could not process your request. Please try again after a while."
+  activemodel:
+    errors:
+      models:
+        buy_meterai_validation:
+          attributes:
+            type_of:
+              blank: "Input cannot blank"
+            qty:
+              blank: "Input cannot blank"
+              not_a_number: "Input not a number"
+              greater_than_or_equal_to: "Must be greater than or equal to %{count}"
+  user:
+    error:
+      messages:
+        unregistered: "The email is not registered"
+        account_incorrect: "The email or password was not correct"
+        unconfirm: "Unconfirmed email address"
+        email_available: "Email is available"
+        email_registered: "Email has already been registered"
+        email_invalid: "Invalid email address"
+        phone_invalid: "Invalid phone number"
+        full_name_invalid: "Invalid full name"
+        number_invalid: "Invalid full number"
+        url_invalid: "Invalid url"
+        invalid_company_name: "Invalid company name"
+        password_not_correct: "Password was not correct"
+        pass_incorrect: "Current password was not correct"
+        password_same_as_old_password: "Can't change the current password with the old password"
+        inactive: "Account is inactive. Contact your company for further inquiries."
+        without_workspace: "The user doesn't have a workspace"
+        industry_not_found: "Industry not found"
+        user_not_owner: "User is not owner"
+    success:
+      messages:
+        integration_deleted: "%{integration} integration deleted"
+  contract:
+    error:
+      messages:
+        greater_than_or_equal_to: "Must be greater than contract start date"
+        already_as_a_contract: "is already tracked as contract"
+        not_contract: "is not a contract"
+  email:
+    resend_email: "Success. Email has been sent if email exist and unconfirmed."
+    signing_reminder:
+      subject:
+        template1: "You have a pending signature request"
+        template2: "The document will expire in 30 days"
+        template3: "The document will expire in 7 days"
+        template_by_day: "The document will expire in %{days} days"
+  kyc:
+    error:
+      unregister: "Please register kyc first"
+      email_registered: "Email has been registered, please contact our support"
+      email_verified: "Email has been verified, please refresh the page"
+      request_id_used: "Request id has been used, please contact our support"
+      generate_id: "Failed to generate registration_id, please contact our support"
+      verification: "Failed to get verification"
+      certificate: "Failed to get certificate"
+      register: "Failed to get registration"
+      revoke: "Failed to revoke certificate"
+      reset_password: "Fail to generate reset password"
+      approve_certificate: "Fail to approve certificate"
+      invalid_registration_id: "Registration ID not valid, please contact our support"
+      valid_registration_id_exist: "You already have a valid registration"
+      insuffient_quota: "you don't have quota to do kyc"
+      invalid_channel: "Company channel is invalid"
+      no_active_certificate: "User does not have active certificate"
+      no_active_autosign: "User has not activated PSrE auto sign"
+      already_active_autosign: "User has already activated PSrE auto sign before"
+  kyb:
+    error:
+      no_active_certificate: "The company does not have an active certificate"
+      free_user_not_allowed: "Free user not allowed to create stamps more than 1"
+  annotation:
+    error:
+      signature: "The maximum placement is %{limit} signatures"
+      meterai: "The maximum placement is %{limit} eMeterais"
+      signing_order_psre: "Signatures must be sequential"
+      annotation_psre_over_limit: "The number of bulk sign psre annotations in 1 document cannot be more than 1"
+      annotation_allowed: "Only signature, initial, and meterai are allowed"
+      signer_has_no_annotation: "one of the signers has no annotations"
+      stamp_not_allowed_on_psre: "PSRE documents are not permitted to use stamp annotations"
+      signing_order: "Signing order must be sequential"
+      signing_unorder: "Signing order must be parallel (0)"
+      must_have_signer: "must have at least 1 signer"
+
+  subscription:
+    error:
+      upgrade: "Cannot upgrade subscripton with same or lower package"
+      new: "Cannot buy subscripton with lower package"
+      ai_package: "Company package does not have AI feature"
+      extraction_package: "Company package does not have document summary instance"
+
+  webhooks:
+    errors:
+      send_failed: "Failed to send the callback"
+      callback_url_empty: "Callback url is empty"
+      callback_host_not_known: "Callback host is not known"
+      callback_payload_empty: "Callback payload is empty"
+  envelopes:
+    errors:
+      document_attachment_type: "Invalid document type, valid document types are: doc, signed_doc"
+  time:
+    formats:
+      default: "%d %B %Y"
+  date:
+    month_names:
+      -
+      - January
+      - February
+      - March
+      - April
+      - May
+      - June
+      - July
+      - August
+      - September
+      - October
+      - November
+      - December
+  user_notification_setting:
+    document_need_sign: "Document need signing"
+    document_signed: "Document is signed by a recipient"
+    emeterai_stamping: "eMeterai stamping is in progress"
+    emeterai_stamped: "eMeterai stamping is completed"
+    document_completed: "Document is completed by all recipient"
+    document_declined: "Document is declined by a recipient"
+    document_voided: "Document is voided by document maker"
+    document_viewed: "Document is viewed by a recipient"
+    document_expiring: "Document is expiring within 120 days"
+    document_expired: "Document is expired after 120 days"
+    reminder_contract: "Reminder of contract renewal"
+    document_rejected: "Document is rejected by a recipient"
+    document_approval_request: "Document approval request"
+    document_need_revision: "Document need revision"
+    document_approved: "Document is approved by approver"
+    document_approval_completed: "Document approval is completed"
+    document_completed_whatsapp_for_doc_maker: "Whatsapp notification when document completed for document maker"
+    approval_request: "Approval requested"
+    approval_approved: "Approval request is approved"
+    approval_rejected: "Approval request is rejected"
+    approval_cancelled: "Approval request is cancelled"
+  approval_workflows:
+    success:
+      deleted: "Approval workflow deleted"
+      created: "Approval workflow created"
+      updated: "Approval workflow updated"
+      envelope_created: "Envelope approval workflow created"
+      envelope_updated: "Envelope approval workflow updated"
+    validation:
+      name_exist: "There is same setting with name"
+      duplicated_approver: "Cannot add same user as approver"
+      not_your_turn: "It's not your turn to %{action}"
+  file_integration:
+    validation:
+      expiry_not_set: "Failed to get token expiry"
+  approval_requests:
+    success:
+      created: "Approval request created"
+      sent: "Approval request sent"
+      uploaded: "Attachment successfully uploaded"
+    validation:
+      not_a_docmaker: "User is not approval maker"
+      already_sent: "Approval request already sent"
+      not_waiting_approval: "Only approval request that waiting_approval can be resend"
+      max_attachment: "Maximum uploaded attachment count is %{max}"
+      max_download: "Maximum download count is %{max}"
+      id_not_found: "ID not found"
+  approval_forms:
+    success:
+      created: "Approval form created"
+      updated: "Approval form updated"
+      deleted: "Approval form deleted"
+    validation:
+      too_long: "%{field} is too long (maximum is %{max} characters)"
+      blank: "can't be blank and must be an array"
+      min_count: "must have at least %{count} question"
+      max_count: "cannot exceed %{count} questions"
+      required_field: "%{field} is required for question #%{index}"
+      question_length: "question text for #%{index} cannot exceed %{max} characters"
+      description_length: "description for #%{index} cannot exceed %{max} characters"
+      invalid_type: "invalid type '%{type}' for question #%{index}. Allowed types: %{allowed_types}"
+      invalid_options: "question #%{index} is of type 'option' but has no valid options"
+      max_options: "options for question #%{index} cannot exceed %{max}"
+      option_required_field: "%{field} is required for option #%{option_index} in question #%{question_index}"
+      option_length: "option text for #%{option_index} in question #%{question_index} cannot exceed %{max} characters"
+      invalid_option_type: "invalid type '%{type}' for option #%{option_index} in question #%{question_index}. Allowed types: %{allowed_types}"
+      rate_options_required: "question #%{index} is of type 'rate' but has no valid question_options"
+      rate_options_missing_fields: "question #%{index} rate options must include: %{fields}"
+      rate_must_be_integer: "question #%{index} start_rate and end_rate must be integers"
+      invalid_rate_range: "question #%{index} start_rate must be less than end_rate"
+      reminder_boolean: "must be true or false"
+      permissions_array: "must be an array"
+      invalid_actor_type: "contains invalid actor_type at index %{index}"
+      layers_cannot_be_empty: "cannot be empty"
+      invalid_rule: "contains invalid rule at layer %{layer}"
+      empty_users: "contains empty users at layer %{layer}"
+      invalid_user: "contains invalid user at index %{index}"
+      different_company: "contains user from different company at index %{index}"
+      not_found_or_not_accessible: "Form not found or you don't have access to it"
+  user_approvals:
+    success:
+      submitted: "Form submission completed successfully"
+    destroy:
+      form_instance_not_found: "Form instance not found"
+      unauthorized: "You are not authorized to delete this form instance"
+    validation:
+      form_not_found: "Approval form not found"
+      form_not_published: "Approval form is not published"
+      question_missing_field: "%{field} is required for question #%{index}"
+      invalid_question_type: "invalid type '%{type}' for question #%{index}"
+      answer_required: "answer is required for question #%{index}"
+      invalid_rate_answer: "rate answer must be between 1-5 for question #%{index}"
+      questions_not_in_form: "questions with IDs %{ids} do not belong to this form"
+      questions_not_found: "questions with IDs %{ids} do not exist"
+      invalid_answered_at_format: "answered_at has invalid datetime format for question #%{index}"
+      form_instance_not_found: "Form instance not found"
+      form_instance_access_denied: "You don't have access to this form instance"
+      question_not_found: "Question not found"
+      question_not_belongs_to_form_instance: "Question does not belong to this form instance"
+      question_must_be_file_type: "Question must be of file type to upload files"
+  access_requests:
+    not_same_company: "User is not in the same company"
+    invalid_user: "User is invalid"
+    no_access: "No access to this workspace"
+    not_admin_or_owner: "User is not admin or owner"
+  signing:
+    validation:
+      not_your_turn: "Access is not available for you yet"
+      deadline_exceeded: "This document is expired"
+      not_supported_image_type: "Format must be in PNG, JPG, JPEG"
+      no_estamp: "No eStamp available"
+      invalid_cert: "Certificate is invalid"
+      inactive_cert: "Certificate is inactive"
+      wrong_compliance: "Cannot proceed this compliance"
+      not_your_turn_to_sign: "Signing is not available for you yet"
+      bulk_sign_package: "Company package does not have bulk sign feature"
+      envelope_archived: "Envelope is archived"
+      encryption_failed: "Encryption %{status} signing envelope failed"
+      envelope_edited: "This document has been edited"
+  notifications:
+    mark_all_read:
+      success: "All notifications marked as read successfully"
+    validations:
+      type:
+        invalid: "Type must be 'envelope', 'approval', or 'document'"
+    validation:
+      invalid_status: "Status must be 'read' or 'unread'"
+      invalid_type: "Type must be 'envelope', 'approval', or 'document'"
+      invalid_need_action: "Need action must be true or false"
+  flex:
+    validation:
+      industry_not_found: "Industry not found"
+  companies:
+    validation:
+      name_too_long: "Company name is too long (maximum 255 characters)"
+    errors:
+      unauthorized: "You are not authorized to edit company name"

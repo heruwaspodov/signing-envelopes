@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% content_for :header do %>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style type="text/css" media="screen">
+        ul { list-style: none; }
+        button {
+            background-color: #4169e1;
+            border: none;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 6px;
+        }
+        button:hover {
+            background-color: #1b44d5;
+        }
+        div.round {
+            border: 1px solid #D0D6DD;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 24px 0;
+        }
+        p {
+            color: black;
+        }
+        button p {
+            color: white;
+            text-decoration: none;
+        }
+        p.footer {
+            color: grey;
+            font-size: 11px;
+        }
+    </style>
+  <% end %>
+</head>
+
+<body>
+<% content_for :logo do %>
+  <img src="https://mekari-esign.netlify.app/public/e-sign.png" width="auto" height="50"> <br>
+<% end %>
+</body>
+
+<% content_for :footer do %>
+  <p>Need help? Visit <a href="https://mekari.com/customer-service">https://mekari.com/customer-service</a> or email us at commercial@mekari.com</p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <hr size="1px" width="30%" align="left">
+  <a href="https://www.facebook.com/mekaricom/" target="_blank"><img src="https://cc7c02.netlify.app/assets/facebook.png" style="filter:grayscale(100%);" width="40" height="40"></a>
+  <a href="https://twitter.com/mekaricom" target="_blank"><img src="https://cc7c02.netlify.app/assets/twitter.png" style="filter:grayscale(100%);" width="40" height="40"></a>
+  <a href="https://www.linkedin.com/company/mekari/" target="_blank"><img src="https://cc7c02.netlify.app/assets/linkedin.png" style="filter:grayscale(100%);" width="40" height="40"></a>
+  <br>
+  <p class='footer'>This email is a service provided by Mekari Sign</p>
+  <p class='footer'>&copy; <%= Time.current.year %> PT Mid Solusi Nusantara. All rights reserved</p>
+<% end %>
+</html>

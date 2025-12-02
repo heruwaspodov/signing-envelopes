@@ -1,0 +1,397 @@
+---
+openapi: 3.0.1
+info:
+  title: ESign Open API
+  version: v1
+  description: |
+    Welcome to ESign Open API.
+    
+    This is the documentation for the ESign Open API. 
+    You can use our API to access ESign Open API endpoints, which can get information on ESign Open API.
+
+servers:
+  - url: http://localhost:3000/public/api/v1
+    description: Local environment
+  - url: https://api.mekari.io/v2/esign/v1
+    description: Staging environment
+  - url: https://sandbox-api.mekari.com/v2/esign/v1
+    description: Sandbox environment
+  - url: https://api.mekari.com/v2/esign/v1
+    description: Production environment
+  - url: TBA
+    description: Mock server
+
+security:
+  - Bearer: []
+
+paths:
+  /profile:
+    get:
+      summary: Get current user information
+      description: Get current user information based on the token
+      operationId: getProfile
+      responses:
+        '200':
+          $ref: '#/components/responses/profileResponse'
+        '401':
+          $ref: '#/components/responses/unauthorizedResponse'
+      security:
+        - Bearer: []
+      tags:
+        - "Profile"
+  
+  /documents/stamp:
+    post:
+      summary: Create document and stamp emeterai
+      operationId: createDocumentStamp
+      responses:
+        '200':
+          $ref: '#/components/responses/createDocumentResponse'
+        '422':
+          $ref: '#/components/responses/validationErrorResponse'
+        '401':
+          $ref: '#/components/responses/unauthorizedResponse'
+      description: |
+        Use this endpoint to create a document and stamp emeterai at the same time.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - data
+              properties:
+                doc:
+                  type: string
+                  format: binary
+                  description: The document file
+                filename:
+                  type: string
+                  example: banana.pdf
+                  description: The document file name
+                annotations:
+                  type: array
+                  description: The annotations of the document
+                  items: 
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                        example: 1
+                      position_x:
+                        type: integer
+                        example: 200
+                      position_y:
+                        type: integer
+                        example: 350
+                      type_of:
+                        type: string
+                        example: meterai
+                callback_url: 
+                  type: string
+                  example: https://yourapp.com/esign/callback
+            encoding:
+              doc:
+                contentType: application/pdf
+          application/json:
+            schema:
+              type: object
+              required:
+                - data
+              properties:
+                doc:
+                  type: string
+                  format: binary
+                  description: The document file
+                filename:
+                  type: string
+                  example: banana.pdf
+                  description: The document file name
+                annotations:
+                  type: array
+                  description: The annotations of the document
+                  items: 
+                    type: object
+                    properties:
+                      page:
+                        type: integer
+                        example: 1
+                      position_x:
+                        type: integer
+                        example: 200
+                      position_y:
+                        type: integer
+                        example: 350
+                      type_of:
+                        type: string
+                        example: meterai
+                callback_url: 
+                  type: string
+                  example: https://yourapp.com/esign/callback
+            encoding: # The same level as schema
+              doc: # Property name (see above)
+                contentType: image/png, image/jpeg, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.ms-excel
+      callbacks:
+        document_stamp:
+          /callback:
+            post:
+              summary: Callback when document and stamp emeterai is done or failed
+              requestBody:
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 5e19bde3-11c4-4f9b-b7a6-4d12bdd39a9b
+                        status:
+                          type: string
+                          example: success
+                        document_url: 
+                          type: string
+                          example: https://api.mekari.com/v2/esign/v1/documents/5e19bde3-11c4-4f9b-b7a6-4d12bdd39a9b/download
+              responses:
+                '200':
+                  description: 'Created'
+              tags:
+                - "Callback"
+      tags:
+        - "Documents"
+  
+  /documents/{documentId}:
+    get:
+      summary: Get document details by ID
+      operationId: getDocument
+      responses:
+        '200':
+          $ref: '#/components/responses/getDocumentResponse'
+        '401':
+          $ref: '#/components/responses/unauthorizedResponse'
+        '404':
+          $ref: '#/components/responses/objectNotFoundResponse'
+
+      parameters:
+        - name: documentId
+          in: path
+          description: The document id
+          required: true
+          schema:
+            type: string
+            format: uuid
+      tags:
+        - "Documents"
+
+  /documents/{documentId}/download:
+    get:
+      summary: Download document by ID
+      operationId: downloadDocument
+      responses:
+        '200':
+          $ref: '#/components/responses/downloadDocumentResponse'
+        '401':
+          $ref: '#/components/responses/unauthorizedResponse'
+        '404':
+          $ref: '#/components/responses/objectNotFoundResponse'
+      parameters:
+        - name: documentId
+          in: path
+          description: The document id
+          required: true
+          schema:
+            type: string
+            format: uuid
+      tags:
+        - "Documents"
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - id
+        - full_name
+        - email
+        - balance
+        - subscription
+        - created_at
+        - updated_at
+      example:
+        id: 13sdf-1234-1234-1234-1234
+        full_name: John Doe
+        email: john.doe@example.com
+        balance: 
+          remaining_ematerai_balance: 10
+          ematerai_balance_usage: 50
+        subscription:
+          plan: free
+          status: active
+          expired_at: 2020-01-01 00:00:00
+        created_at: 2020-01-01 00:00:00
+        updated_at: 2020-01-01 00:00:00
+    Document:
+      type: object
+      required:
+        - id
+        - filename
+        - status
+        - created_at
+        - updated_at
+      example:
+        id: 13sdf-1234-1234-1234-1234
+        filename: https://api.mekari.com/v2/esign/v1/documents/5e19bde3-11c4-4f9b-b7a6-4d12bdd39a9b/download
+        status: success
+        created_at: 2020-01-01 00:00:00
+        updated_at: 2020-01-01 00:00:00
+
+  responses:
+    profileResponse:
+      description: Current User Detail
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - data
+            properties:
+              data:
+                type: object
+                required:
+                  - attributes
+                properties:
+                  type:
+                    type: string
+                    example: user
+                  id:
+                    type: string
+                    example: 13sdf-1234-1234-1234-1234
+                  attributes:
+                    $ref: '#/components/schemas/User'
+                    
+    createDocumentResponse:
+      description: Current User Detail
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - data
+            properties:
+              data:
+                type: object
+                required:
+                  - attributes
+                properties:
+                  type:
+                    type: string
+                    example: document
+                  id:
+                    type: string
+                    example: 13sdf-1234-1234-1234-1234
+                  attributes:
+                    $ref: '#/components/schemas/Document'
+
+    getDocumentResponse:
+      description: Document detail by ID
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - data
+            properties:
+              data:
+                type: object
+                required:
+                  - attributes
+                properties:
+                  type:
+                    type: string
+                    example: document
+                  id:
+                    type: string
+                    example: 13sdf-1234-1234-1234-1234
+                  attributes:
+                    $ref: '#/components/schemas/Document'
+
+    downloadDocumentResponse:
+      description: Download document by ID
+      content:
+        application/json:
+          schema:
+            type: string
+            format: binary
+    
+    unauthorizedResponse:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - message
+            properties:
+              code:
+                type: string
+                example: e401
+              message:
+                type: string
+                example: Unauthorized
+    
+    errorResponse:
+      description: Error
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - message
+            properties:
+              message:
+                type: string
+    
+    validationErrorResponse:
+      description: Validation Error
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - message
+            properties:
+              code: 
+                type: string
+                example: e422
+              message:
+                type: string
+                example: Validation Error
+              errors:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    code: 
+                      type: string
+                      example: e422-1
+                    field:
+                      type: string
+                      example: ematerai
+                    message:
+                      type: string
+                      example: ematerai quota is unsufficient
+
+    objectNotFoundResponse:
+      description: Data Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - message
+            properties:
+              code: 
+                type: string
+                example: e404
+              message:
+                type: string
+                example: Data Not Found

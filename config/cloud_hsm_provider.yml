@@ -1,0 +1,40 @@
+# frozen_string_literal: true
+
+default: &default
+  cloud_provider: <%= ENV['CLOUDHSM_PROVIDER'] || "aws" %>
+  region: <%= ENV['CLOUDHSM_REGION'] || "ap-southeast-5" %>
+  region_cluster: <%= ENV['CLOUDHSM_CLUSTER_REGION'] || "ap-southeast-5" %>
+  
+  aws:
+    hsm:
+      engine: <%= ENV['CLOUDHSM_AWS_HSM_INTEGRATION_TYPE'] || "cloudhsm" %>
+      dir: <%= ENV['CLOUDHSM_AWS_DIR'] || "/opt/cloudhsm/etc" %>
+      dir_cluster: <%= ENV['CLOUDHSM_AWS_CLUSTER_DIR'] || "/opt/cloudhsm/etc" %>
+      ca: <%= ENV['CLOUDHSM_AWS_CUSTOMERCA_DIR'] || "/opt/cloudhsm/etc/customerCA.crt" %>
+      private_key: <%= ENV['CLOUDHSM_AWS_PRIVATEKEY_DIR'] || "/opt/cloudhsm/etc/app-private-key.pem" %>
+      cert: <%= ENV['CLOUDHSM_AWS_GLOBALSIGN_CERT'] || "/opt/cloudhsm/etc/globalsign-cert.crt" %>
+      intermediate1: <%= ENV['CLOUDHSM_AWS_GLOBALSIGN_INTERMEDIATE_1'] || "/opt/cloudhsm/etc/globalsign-intermediate1.crt" %>
+      intermediate2: <%= ENV['CLOUDHSM_AWS_GLOBALSIGN_INTERMEDIATE_2'] || "/opt/cloudhsm/etc/globalsign-intermediate2.crt" %>
+
+  aliyun:
+    hsm:
+      engine: <%= ENV['CLOUDHSM_ALI_HSM_INTEGRATION_TYPE'] || "hsm_openssl" %>
+      dir: <%= ENV['CLOUDHSM_ALI_DIR'] || "/opt/hsm/etc" %>
+      dir_cluster: <%= ENV['CLOUDHSM_ALI_CLUSTER_DIR'] || "/opt/hsm/etc" %>
+      ca: <%= ENV['CLOUDHSM_ALI_CUSTOMERCA_DIR'] || "/opt/hsm/etc/customerCA.crt" %>
+      private_key: <%= ENV['CLOUDHSM_ALI_PRIVATEKEY_DIR'] || "/opt/hsm/etc/app-private-key.pem" %>
+      cert: <%= ENV['CLOUDHSM_ALI_GLOBALSIGN_CERT'] || "/opt/hsm/etc/globalsign-cert.crt" %>
+      intermediate1: <%= ENV['CLOUDHSM_ALI_GLOBALSIGN_INTERMEDIATE_1'] || "/opt/hsm/etc/globalsign-intermediate1.crt " %>
+      intermediate2: <%= ENV['CLOUDHSM_ALI_GLOBALSIGN_INTERMEDIATE_2'] || "/opt/hsm/etc/globalsign-intermediate2.crt" %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+staging:
+  <<: *default
+
+production:
+  <<: *default
